@@ -47,6 +47,7 @@ body {
 	border-radius: 1em;
 	transition: .1s ease-in;
 	display: flex;
+	margin: 50px;
 	
 }
 
@@ -59,15 +60,16 @@ body {
 }
 
 .button, .clear,.button1 {
+	background-color: rgb(75, 255, 30);
 	cursor: pointer;
 	font-size: 20px;
 	border: .2px solid green;
 	width: 100px; 
-	padding: 10px 20px;
+	padding: 10px 20px ;
 	border-radius: 1em;
 	transition: .1s ease-in;
-	margin-left: 90px;
-
+	margin-right: 70px;
+	display: flex;
 	
 }
 .filter {
@@ -75,7 +77,7 @@ align-items: center;
 
 }
 
-.regNumber {
+.output {
 
 	background-color: yellow;
 	border: 0.1em solid;

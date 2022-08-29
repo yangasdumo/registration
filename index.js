@@ -7,6 +7,8 @@ const reggie = require('./registration');
 
 
 const app = express();
+app.use(flash());
+// app.use(session());
 
 //database
 const pgp = require('pg-promise')({});
@@ -23,6 +25,12 @@ if (process.env.NODE_ENV == "production") {
     rejectUnauthorized: false
   }
 }
+
+app.use(session({
+  secret:'geeksforgeeks',
+  saveUninitialized: true,
+  resave: true
+}));
 
 app.engine('handlebars', exphbs.engine({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
@@ -46,21 +54,23 @@ app.get("/", async function (req, res) {
 
 app.post("/registration", async function(req, res) {
   let cars = req.body.reg
- console.log(cars)
   if (cars !== null) {
-    var output = await plates.RegNumber()
     await plates.storesRegNumber(cars)
   }
   res.redirect("/");
 
 });
       
-  app.post("/filtering/:town", async function (req, res) {
-    filteReg(reg).req.params.town_id
-    await plates.filteReg(reg)
+  app.post("/filtering", async function (req, res) {
+    // let reg = req.params.filteReg(reg)
+    // let re4 = await plates.filteReg(reg)
+   
+    // let town_id = await plates.filteReg(reg)
+    // town_id;
+    console.log('fdfdfdfdfdfd')
     res.redirect("/");
   })
-   
+
   app.get("/clear", async function (req, res) {
     await plates.removeData()
     req.flash('data',"All Data Has Been Cleared");

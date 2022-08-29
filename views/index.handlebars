@@ -48,13 +48,13 @@
 				</div>
 				{{/each}}
 			</div>
-			<div class="TownName">
-				<button type="submit" class= "Names">Show Towns</button>
-
-
-				<a href="/clear">
-					<div class="clear">Clear</div>
-			</div>
+			<form action="/filtering" method="post">
+				<div class="TownName">
+			<button type="submit" class="Names">Show Towns</button>
+				</div>
+			</form>
+			<a href="/clear">
+				<div class="clear">Clear</div>
 		</div>
 	</div>
 </body>
