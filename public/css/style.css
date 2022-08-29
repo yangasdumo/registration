@@ -1,6 +1,7 @@
 body {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 1em;
+	background-color: rgb(57, 192, 192);
 
 }
 
@@ -35,10 +36,10 @@ body {
 }
 
 .blue {
-	background-color: rgb(75, 255, 30);
+	background-color: rgb(255, 30, 221);
 }
 .TownName{
-	background-color: rgb(75, 255, 30);
+	background-color: rgb(255, 30, 199);
 	cursor: pointer;
 	font-size: 20px;
 	border: .2px solid green;
@@ -60,7 +61,7 @@ body {
 }
 
 .button, .clear,.button1 {
-	background-color: rgb(75, 255, 30);
+	background-color: rgb(255, 30, 233);
 	cursor: pointer;
 	font-size: 20px;
 	border: .2px solid green;
