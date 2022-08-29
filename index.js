@@ -37,10 +37,14 @@ const db = pgp(config)
 const plates = reggie(db)
 
 app.get("/", async function (req, res) {
-   let output = await plates.RegNumber()
-  res.render("index",{
-    output
-  });
+   try {
+    let output = await plates.RegNumber()
+    res.render("index",{
+      output
+    });
+   } catch (error) {
+     console.log(error.stack)
+   }
 
 });
 
