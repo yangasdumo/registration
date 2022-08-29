@@ -8,6 +8,7 @@ body {
 .container {
 	width: 90%;
 	margin:	auto;
+	padding-left: 300px;
 	
 }
 
@@ -21,7 +22,6 @@ body {
 }
 
 .regNumberEntered {
-	/* margin: 1em; */
 	padding: 1em;
 	border-radius: 0.5em;
 	font-size: 1em;
@@ -37,11 +37,42 @@ body {
 .blue {
 	background-color: rgb(75, 255, 30);
 }
+.TownName{
+	background-color: rgb(75, 255, 30);
+	cursor: pointer;
+	font-size: 20px;
+	border: .2px solid green;
+	width: 100px; 
+	padding: 5px 20px;
+	border-radius: 1em;
+	transition: .1s ease-in;
+	display: flex;
+	
+}
+
+	
 
 .message {
 	height: 1em;
 	font-weight: bold;
 	color: crimson;
+}
+
+.button, .clear,.button1 {
+	cursor: pointer;
+	font-size: 20px;
+	border: .2px solid green;
+	width: 100px; 
+	padding: 10px 20px;
+	border-radius: 1em;
+	transition: .1s ease-in;
+	margin-left: 90px;
+
+	
+}
+.filter {
+align-items: center;
+
 }
 
 .regNumber {
@@ -71,3 +102,9 @@ input[type='radio'] {
 	margin: 1em;
 }
 
+@media screen  and (max-width:680px){
+    /* h1{
+        text-align:center;
+    } */
+
+}
