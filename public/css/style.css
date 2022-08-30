@@ -7,10 +7,23 @@ body {
 
 
 .container {
-	width: 90%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 600px;
+	flex-wrap: wrap;
 	margin:	auto;
-	padding-left: 300px;
+	/* padding-left: 300px; */
 	
+}
+.main-container{
+	display: flex;
+	/* align-items: center; */
+	justify-content: center;
+	flex-direction: column;
+	padding: 20px;
+	border: 15px;
+	border-radius: .2px solid gray;
 }
 
 .parts {
@@ -54,7 +67,7 @@ body {
 
 	
 
-.message {
+.data {
 	height: 1em;
 	font-weight: bold;
 	color: crimson;

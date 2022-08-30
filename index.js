@@ -8,7 +8,7 @@ const reggie = require('./registration');
 
 const app = express();
 app.use(flash());
-// app.use(session());
+
 
 //database
 const pgp = require('pg-promise')({});
@@ -27,9 +27,9 @@ if (process.env.NODE_ENV == "production") {
 }
 
 app.use(session({
-  secret:'geeksforgeeks',
-  saveUninitialized: true,
-  resave: true
+  secret: 'this is my longest string that is used to test my registration with routes app for browser',
+  resave: false,
+  saveUninitialized: true
 }));
 
 app.engine('handlebars', exphbs.engine({ defaultLayout: 'main' }));
@@ -49,31 +49,37 @@ app.get("/", async function (req, res) {
   res.render("index",{
     output
   });
-
 });
 
 app.post("/registration", async function(req, res) {
   let cars = req.body.reg
   if (cars !== null) {
+    req.flash('message',"Please enter your registration number !!")
     await plates.storesRegNumber(cars)
   }
   res.redirect("/");
-
+  
 });
       
   app.post("/filtering", async function (req, res) {
-    // let reg = req.params.filteReg(reg)
-    // let re4 = await plates.filteReg(reg)
-   
-    // let town_id = await plates.filteReg(reg)
-    // town_id;
-    console.log('fdfdfdfdfdfd')
-    res.redirect("/");
+    let reg = req.body.town
+    let output = await plates.filteReg(reg)
+    res.render("index",{
+      output
+    });
+  })
+                                                     
+  app.get("/filtering", async function (req, res) {
+    let reg = req.body.town
+    let output = await plates.filteReg(reg)
+    res.render("index",{
+      output
+    });
   })
 
   app.get("/clear", async function (req, res) {
     await plates.removeData()
-    req.flash('data',"All Data Has Been Cleared");
+    req.flash('message',"All Data Has Been Cleared");
     res.redirect("/")
     
   });

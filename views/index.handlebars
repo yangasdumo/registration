@@ -11,50 +11,49 @@
 
 <body>
 	<div class="container">
-		<div>
+		<div class="main-container">
 			<h1>Registration numbers</h1>
 
 			<div class="message">
-
+				{{error-messages.message}}
 			</div>
 
 			<img class="" src="/css/car.jpeg" style="width:400px; height:300px" alt="">
-			{{!-- <div> --}}
-				<form action="/registration" method="POST">
-					<input type="text" name="reg" class="regNumberEntered" value=""
-						placeholder="enter a registration number">
-					{{!--
-			</div> --}}
-			<button type="submit" class="addRegNumber btn blue">Add reg number</button>
 
-			<div class="filter">
-				<strong>Filter by town</strong>
+			<form action="/registration" method="POST">
 
-				<input type="radio" name="town" value="">Show all
-				<input type="radio" name="town" value="EC">Eastern Cape
-				<input type="radio" name="town" value="GP">Gauteng
-				<input type="radio" name="town" value="WP"> Western Province
-				<input type="radio" name="town" value="ZJ"> Gcuwa
-			</div>
-			<hr>
+				<input type="text" name="reg" class="regNumberEntered" value=""
+					placeholder="enter a registration number">
+
+				<button type="submit" class="addRegNumber btn blue">Add reg number</button>
 			</form>
-			<div class="regNumbers">
 
-				{{#each output}}
-				<div class="output">
-					{{!-- CY 124-245 --}}
-					{{this.reg_number}}
-				</div>
-				{{/each}}
-			</div>
 			<form action="/filtering" method="post">
-				<div class="TownName">
-			<button type="submit" class="Names">Show Towns</button>
+				<div class="filter">
+					<strong>Filter by town</strong>
+					{{!-- <input type="radio" name="town" value="">Show all --}}
+					<input type="radio" name="town" value="EC">Eastern Cape
+					<input type="radio" name="town" value="GP">Gauteng
+					<input type="radio" name="town" value="WP"> Western Province
+					<input type="radio" name="town" value="ZJ"> Gcuwa
 				</div>
+				<hr>
+				<div class="regNumbers">
+
+					{{#each output}}
+					<div class="output">
+						{{this.reg_number}}
+					</div>
+					{{/each}}
+				</div>
+				<br><br>
+				<div class="TownName">
+					<button type="submit" class="Names">Show Towns</button>
 			</form>
-			<a href="/clear">
-				<div class="clear">Clear</div>
 		</div>
+		<a href="/clear">
+			<div class="clear">Clear</div>
+	</div>
 	</div>
 </body>
 <script src="../registration.js" charset="utf-8"></script>
