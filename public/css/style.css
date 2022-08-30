@@ -53,15 +53,24 @@ body {
 }
 
 .TownName{
-	background-color: rgb(255, 30, 199);
-	cursor: pointer;
-	font-size: 20px;
-	border: .2px solid green;
-	width: 100px; 
+	/* background-color: rgb(255, 30, 199); */
+	/* cursor: pointer; */
+	/* font-size: 20px; */
+	/* border: .2px solid green; */
+	/* width: 100px;  */
 	padding: 3px 20px;
-	border-radius: 1em;
-	transition: .1s ease-in;
+	/* border-radius: 1em; */
+	/* transition: .1s ease-in; */
 	display: flex;
+}
+.Names{
+	cursor: pointer;
+	border-radius: 1em;
+	background-color: rgb(255, 30, 221);
+	font-size: 20px; 
+	border: .2px solid green;
+	 width: 100px; 
+	 
 }
 
 	
