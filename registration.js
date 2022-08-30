@@ -13,9 +13,9 @@ module.exports = function reggie(db) {
 
         // if (regEx.test(reg)) {
 
-            var registration = await db.manyOrNone('SELECT reg_number FROM my_regnumber WHERE reg_number =$1', [reg])
-            var theReg = reg.slice(0, 2);
-            var town_id = await db.one("SELECT id FROM my_town WHERE town_tag = $1", [theReg]);
+            let registration = await db.manyOrNone('SELECT reg_number FROM my_regnumber WHERE reg_number =$1', [reg])
+            let  theReg = reg.slice(0, 2);
+            let  town_id = await db.one("SELECT id FROM my_town WHERE town_tag = $1", [theReg]);
         // }
         
         if (registration.length === 0) {
