@@ -73,8 +73,33 @@ body {
 	 
 }
 
-	
-
+.topnav {
+	overflow: hidden;
+	background-color: #333;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	left: 0;
+	right:0;
+  }
+  .topnav a {
+	float: left;
+	color: #f2f2f2;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+	font-size: 17px;
+  }
+  
+  .topnav a:hover {
+	background-color: #ddd;
+	color: black;
+  }
+  
+  .topnav a.active {
+	background-color: #b00f85;
+	color: white;
+  }
 .message{
 	height:3em;
 	font-weight: bold;
@@ -92,11 +117,12 @@ body {
 	font-size: 20px;
 	border: .2px solid green;
 	width: 100px; 
-	padding:3px 20px ;
+	padding:10px 20px ;
 	border-radius: 1em;
 	transition: .1s ease-in;
-	margin-right: 70px;
+	/* margin-right: 70px; */
 	display: flex;
+	margin: 3px;
 	
 }
 .filter {

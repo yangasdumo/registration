@@ -26,6 +26,7 @@
 					placeholder="enter a registration number">
 
 				<button type="submit" class="addRegNumber btn blue">Add reg number</button>
+				
 			</form>
 
 			<form action="/filtering" method="post">
@@ -47,17 +48,24 @@
 				</div>
 				<br>
 				<div class="plates">
-				<div class="TownName">
-					<button type="submit" class="Names">Show Towns</button>
+					<div class="TownName">
+				<button type="submit" class="Names">Show Towns</button>
+					</div>
 			</form>
+			<div class="topnav">
+				<a class="active" href="/">Home</a>
+				<a href="/registration"></a>
+				{{!-- <a href="/counter">Times</a> --}}
+			</div>
 		</div>
 		<br>
 		<a href="/clear">
 			<div class="clear">Clear</div>
 		</a>
-		</div>
+	</div>
 	</div>
 	</div>
 </body>
 <script src="setTimeout.js"></script>
+
 </html>

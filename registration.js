@@ -9,20 +9,16 @@ module.exports = function reggie(db) {
     }
 
     async function storesRegNumber(reg) {
-        // let reg2 = reg.toUpperCase()
+        let registration = await db.manyOrNone('SELECT reg_number FROM my_regnumber WHERE reg_number =$1', [reg])
+        let theReg = reg.slice(0, 2);
+        let town_id = await db.one("SELECT id FROM my_town WHERE town_tag = $1", [theReg]);
 
-        // if (regEx.test(reg)) {
-
-            let registration = await db.manyOrNone('SELECT reg_number FROM my_regnumber WHERE reg_number =$1', [reg])
-            let  theReg = reg.slice(0, 2);
-            let  town_id = await db.one("SELECT id FROM my_town WHERE town_tag = $1", [theReg]);
-        // }
-        
         if (registration.length === 0) {
             await db.none("INSERT into my_regnumber(reg_number,town_id) values($1,$2)", [reg, town_id.id]);
-
         }
     }
+
+
     async function filteReg(reg) {
         var town_id = await db.one("SELECT id FROM my_town WHERE town_tag = $1", [reg]);
         let towns_id = town_id.id
