@@ -22,11 +22,7 @@ module.exports = function reggie(db) {
             await db.none("INSERT into my_regnumber(reg_number,town_id) values($1,$2)", [reg, town_id.id]);
 
         }
-
-
     }
-
-
     async function filteReg(reg) {
         var town_id = await db.one("SELECT id FROM my_town WHERE town_tag = $1", [reg]);
         let towns_id = town_id.id

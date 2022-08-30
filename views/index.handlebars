@@ -15,7 +15,7 @@
 			<h1>Registration numbers</h1>
 
 			<div class="message">
-				{{error-messages.message}}
+				{{messages.message}}
 			</div>
 
 			<img class="" src="/css/car.jpeg" style="width:400px; height:300px" alt="">
@@ -39,23 +39,25 @@
 				</div>
 				<hr>
 				<div class="regNumbers">
-
 					{{#each output}}
 					<div class="output">
 						{{this.reg_number}}
 					</div>
 					{{/each}}
 				</div>
-				<br><br>
+				<br><br><br>
+				<div class="plates">
 				<div class="TownName">
 					<button type="submit" class="Names">Show Towns</button>
 			</form>
 		</div>
+		<br>
 		<a href="/clear">
 			<div class="clear">Clear</div>
+		</a>
+		</div>
 	</div>
 	</div>
 </body>
-<script src="../registration.js" charset="utf-8"></script>
-
+<script src="setTimeout.js"></script>
 </html>

@@ -51,26 +51,29 @@ body {
 .blue {
 	background-color: rgb(255, 30, 221);
 }
+
 .TownName{
 	background-color: rgb(255, 30, 199);
 	cursor: pointer;
 	font-size: 20px;
 	border: .2px solid green;
 	width: 100px; 
-	padding: 5px 20px;
+	padding: 3px 20px;
 	border-radius: 1em;
 	transition: .1s ease-in;
 	display: flex;
-	margin: 50px;
-	
 }
 
 	
 
-.data {
-	height: 1em;
+.message{
+	height:3em;
 	font-weight: bold;
 	color: crimson;
+	font-size: medium;
+}
+.plates{
+	margin-left: 210px;
 }
 
 .button, .clear,.button1 {
@@ -79,7 +82,7 @@ body {
 	font-size: 20px;
 	border: .2px solid green;
 	width: 100px; 
-	padding: 10px 20px ;
+	padding:3px 20px ;
 	border-radius: 1em;
 	transition: .1s ease-in;
 	margin-right: 70px;
@@ -92,17 +95,19 @@ align-items: center;
 }
 
 .output {
-
 	background-color: yellow;
 	border: 0.1em solid;
 	border-radius: 0.25em;
 	padding: 1em;
 	margin: 0.5em;
-	width: 7em;
+	width: 6em;
 	text-align: center;
 	font-weight: bold;
 	float: left;
-
+}
+.regNumbers{
+	width: 590px;
+	height: 215px;
 }
 
 .gp {
