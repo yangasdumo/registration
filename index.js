@@ -56,10 +56,6 @@ app.post("/registration", async function (req, res) {
   if (cars == null || cars == '') {
     req.flash('message', "Please enter your registration number !!")
   }else{
-    // if(registration.length === 0){
-    //   var registration = await db.manyOrNone('SELECT reg_number FROM my_regnumber WHERE reg_number =$1', [reg])
-    //   req.flash('message',"Registration number already exist !!")
-    // }
     await plates.storesRegNumber(cars)
   }
   res.redirect("/");
