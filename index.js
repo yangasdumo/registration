@@ -4,6 +4,7 @@ const session = require('express-session');
 const exphbs = require("express-handlebars");
 const bodyParser = require('body-parser');
 const reggie = require('./registration');
+const Routee = require('./routes')
 
 
 const app = express();
@@ -42,48 +43,16 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 const db = pgp(config)
-const plates = reggie(db)
+// const plates = reggie(db)
 
-app.get("/", async function (req, res) {
-  let output = await plates.RegNumber()
-  res.render("index", {
-    output
-  });
-});
+const regNum =  reggie(db)
+const regPlates = Routee( regNum)
 
-app.post("/registration", async function (req, res) {
-  let cars = req.body.reg
-  if (cars == null || cars == '') {
-    req.flash('message', "Please enter your registration number !!")
-  }else{
-    await plates.storesRegNumber(cars)
-  }
-  res.redirect("/");
-
-});
-
-app.post("/filtering", async function (req, res) {
-  let reg = req.body.town
-  let output = await plates.filteReg(reg)
-  res.render("index", {
-    output
-  });
-})
-
-app.get("/filtering", async function (req, res) {
-  let reg = req.body.town
-  let output = await plates.filteReg(reg)
-  res.render("index", {
-    output
-  });
-})
-
-app.get("/clear", async function (req, res) {
-  await plates.removeData()
-  req.flash('message', "All Data Has Been Cleared !!")
-  res.redirect("/")
-
-});
+app.get("/",regPlates.home)
+app.post("/registration",regPlates.registration) 
+app.post("/filtering", regPlates.filtering)
+app.get("/filtering",regPlates.filteringe)
+app.get("/clear",regPlates.clear) 
 
 const PORT = process.env.PORT || 3000;
 
