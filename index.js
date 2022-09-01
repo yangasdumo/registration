@@ -5,8 +5,6 @@ const exphbs = require("express-handlebars");
 const bodyParser = require('body-parser');
 const reggie = require('./registration');
 const Routee = require('./routes')
-
-
 const app = express();
 app.use(flash());
 
