@@ -78,10 +78,12 @@ describe("The Registration Database tests", async function () {
         
             const regNum =  reggie(db)
              await regNum.storesRegNumber("ZJ")
-            assert.deepEqual( "", await regNum.removeData())
+             await regNum.removeData()
+
+            assert.deepEqual( [], await regNum.RegNumber())
             
         }); 
-      
+
         it("Should be filtering by any town", async function () {
         
             const regNum =  reggie(db)
