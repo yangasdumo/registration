@@ -12,7 +12,7 @@ app.use(flash());
 //database
 const pgp = require('pg-promise')({});
 
-const local_database_url = 'postgres://codex:codex123@localhost:5432/my_reg';
+const local_database_url = 'postgres://postgres:codex123@localhost:5432/my_reg';
 const connectionString = process.env.DATABASE_URL || local_database_url;
 
 const config = {
@@ -41,7 +41,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 const db = pgp(config)
-// const plates = reggie(db)
+
 
 const regNum =  reggie(db)
 const regPlates = Routee( regNum)
