@@ -89,16 +89,20 @@ describe("The Registration Database tests", async function () {
             assert.deepEqual( [],zompo)
             
         }); 
-
-        // it("Should be able able to show all registration number in the database", async function () {
+        it("Should be filtering by any town", async function () {
         
-        //     const regNum =  reggie(db)
-        //     await regNum.RegNumber("GP")
-        //     assert.deepEqual( "" , await regNum.Show())
+            const regNum =  reggie(db)
+            let zompo = await regNum.filteReg("ZJ")
+            assert.deepEqual( [],zompo)
             
-        // }); 
+        }); 
+        it("Should be filtering by any town", async function () {
+        
+            const regNum =  reggie(db)
+            let zompo = await regNum.filteReg("EC")
+            assert.deepEqual( [],zompo)
+            
+        }); 
 
         
-    //  after(async function () {
-    // await db.manyOrNone('Truncate my_regnumber');
 });
