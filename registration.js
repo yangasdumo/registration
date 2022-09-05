@@ -12,7 +12,6 @@ module.exports = function reggie(db) {
     async function storesRegNumber(reg) {
         let registration = await db.manyOrNone('SELECT reg_number FROM my_regnumber WHERE reg_number = $1', [reg]);
         if (regEx.test(reg) && registration.length === 0) {
-            // console.log( registration)
             let theReg = reg.slice(0, 2);
             let town_id = await db.one("SELECT id FROM my_town WHERE town_tag = $1", [theReg]);
             await db.none("INSERT into my_regnumber(reg_number,town_id) values($1,$2)", [reg, town_id.id]);
