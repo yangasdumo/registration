@@ -28,7 +28,7 @@ module.exports = function reggie(db) {
     async function removeData() {
         await db.none("DELETE FROM my_regnumber")
     }
-
+      
     async function Show() {
         await db.manyOrNone("SELECT town_id FROM my_regnumber ")
     }
