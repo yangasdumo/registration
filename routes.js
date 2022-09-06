@@ -22,7 +22,6 @@ module.exports = function Registration(plates) {
       async function filtering(req, res) {
         let output = []
         let reg = req.body.town
-
         if (reg == false || reg == undefined){
           req.flash('message',"Please select a registration Town ")
         }else{

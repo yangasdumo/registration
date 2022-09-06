@@ -13,7 +13,6 @@ module.exports = function reggie(db) {
         if(regEx.test(reg) == false){
             return regEx.test(reg)
         }
-
         let registration = await db.manyOrNone('SELECT reg_number FROM my_regnumber WHERE reg_number = $1', [reg]);
         if (regEx.test(reg) && registration.length === 0) {
             let theReg = reg.slice(0, 2);

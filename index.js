@@ -43,7 +43,6 @@ app.use(bodyParser.json());
 
 const db = pgp(config)
 
-
 const regNum =  reggie(db)
 const regPlates = Routee( regNum)
 
