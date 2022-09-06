@@ -10,25 +10,30 @@ module.exports = function Registration(plates) {
 
       async function registration(req, res) {
         let cars = req.body.reg
-        if (cars == null || cars == '') {
-          req.flash('message', "Please enter your registration number !!")
+        if(cars == null || cars == '' || await plates.storesRegNumber(cars) === false) {
+          req.flash('message', "Registration number not valid")
         }else{
           await plates.storesRegNumber(cars)
         }
         res.redirect("/");
-      
       }
 
    
       async function filtering(req, res) {
+        let output = []
         let reg = req.body.town
-        let output = await plates.filteReg(reg)
+
+        if (reg == false || reg == undefined){
+          req.flash('message',"Please select a registration Town ")
+        }else{
+          output = await plates.filteReg(reg)
+        }
         res.render("index", {
           output
         });
       }
    
-      async function filteringe(req, res) {
+      async function getFiltering(req, res) {
         let reg = req.body.town
         let output = await plates.filteReg(reg)
         res.render("index", {
@@ -47,7 +52,7 @@ module.exports = function Registration(plates) {
         home,
         registration,
         filtering,
-        filteringe,
+        getFiltering,
         clear
     }
    

@@ -49,18 +49,7 @@ describe("The Registration Database tests", async function () {
             
         }); 
 
-        it("Should return all the registration numbers that are stored ", async function () {
         
-            const regNum =  reggie(db)
-            const popo = await regNum.storesRegNumber("ZJ 345-967")
-            assert.deepEqual( [
-                {
-                  reg_number: 'ZJ 345-967'
-                }
-              ] , await regNum.RegNumber())
-            
-        }); 
-    
         it("Should return all the registration numbers that are stored ", async function () {
         
             const regNum =  reggie(db)
@@ -76,7 +65,7 @@ describe("The Registration Database tests", async function () {
         it("Should be no registration numbers in a database when the clear button is pressed ", async function () {
         
             const regNum =  reggie(db)
-             await regNum.storesRegNumber("ZJ")
+             await regNum.storesRegNumber("GP")
              await regNum.removeData()
 
             assert.deepEqual( [], await regNum.RegNumber())
@@ -90,13 +79,7 @@ describe("The Registration Database tests", async function () {
             assert.deepEqual( [],zompo)
             
         }); 
-        it("Should be filtering by any town", async function () {
-        
-            const regNum =  reggie(db)
-            let zompo = await regNum.filteReg("ZJ")
-            assert.deepEqual( [],zompo)
-            
-        }); 
+       
         it("Should be filtering by any town", async function () {
         
             const regNum =  reggie(db)

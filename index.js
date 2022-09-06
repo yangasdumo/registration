@@ -50,7 +50,7 @@ const regPlates = Routee( regNum)
 app.get("/",regPlates.home)
 app.post("/registration",regPlates.registration) 
 app.post("/filtering", regPlates.filtering)
-app.get("/filtering",regPlates.filteringe)
+app.get("/filtering",regPlates.getFiltering)
 app.get("/clear",regPlates.clear) 
 
 const PORT = process.env.PORT || 3000;

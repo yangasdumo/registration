@@ -1,7 +1,7 @@
 module.exports = function reggie(db) {
 
 
-    let regEx = /^(GP|ZJ|WP|EC)\s[0-9]{3}(\-|\s)?[0-9]{3}$/;
+    let regEx = /^(GP|ZJ|WP|EC)\s[0-9]{1,4}(\-|\s)?[0-9]{1,4}$/;
 
 
     async function RegNumber() {
@@ -10,6 +10,10 @@ module.exports = function reggie(db) {
     }
 
     async function storesRegNumber(reg) {
+        if(regEx.test(reg) == false){
+            return regEx.test(reg)
+        }
+
         let registration = await db.manyOrNone('SELECT reg_number FROM my_regnumber WHERE reg_number = $1', [reg]);
         if (regEx.test(reg) && registration.length === 0) {
             let theReg = reg.slice(0, 2);

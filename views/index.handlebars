@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<title>Registration</title>
 	<link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -13,13 +13,13 @@
 	<div class="container">
 		<div class="main-container">
 			<h1>Registration numbers</h1>
-
+			
 			<div class="message">
 				{{messages.message}}
 			</div>
-
 			
-			 {{!-- <img src=".//car.jpeg" alt="" class="col-3" /> --}}
+            <strong><p><i> Enter your registration number below e.g WP 345 825, GP 123123, EC 678-187</i></p></strong>
+			
 
 			<form action="/registration" method="POST">
 
@@ -37,7 +37,6 @@
 					<input type="radio" name="town" value="EC">Eastern Cape
 					<input type="radio" name="town" value="GP">Gauteng
 					<input type="radio" name="town" value="WP"> Western Province
-					<input type="radio" name="town" value="ZJ"> Gcuwa
 				</div>
 				<hr>
 				<div class="regNumbers">
@@ -50,7 +49,7 @@
 				<br>
 				<div class="plates">
 					<div class="TownName">
-				<button type="submit" class="Names">Show Towns</button>
+				<button type="submit" class="Names">Filter Towns</button>
 					</div>
 					<a href="/clear">
 			<div class="clear">Clear</div>
