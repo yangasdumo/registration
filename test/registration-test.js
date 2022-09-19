@@ -75,18 +75,26 @@ describe("The Registration Database tests", async function () {
         it("Should be filtering by any town", async function () {
         
             const regNum =  reggie(db)
-            let zompo = await regNum.filteReg("GP")
-            assert.deepEqual( [],zompo)
+            let towns = await regNum.filteReg("GP")
+            assert.deepEqual( [],towns)
             
         }); 
        
         it("Should be filtering by any town", async function () {
         
             const regNum =  reggie(db)
-            let zompo = await regNum.filteReg("EC")
-            assert.deepEqual( [],zompo)
+            let towns = await regNum.filteReg("EC")
+            assert.deepEqual( [],towns)
             
         }); 
+
+        it("Should be filtering by any town", async function () {
+        
+          const regNum =  reggie(db)
+          let towns = await regNum.filteReg("WP")
+          assert.deepEqual( [],towns)
+          
+      }); 
 
         
 });

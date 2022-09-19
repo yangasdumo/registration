@@ -56,8 +56,10 @@ body {
 }
 
 .TownName{
-	padding: 3px 20px;
+	padding: 3px;
+	padding-bottom: 5px;
 	display: flex;
+
 }
 .Names{
 	cursor: pointer;
@@ -65,7 +67,10 @@ body {
 	background-color: rgb(255, 30, 221);
 	font-size: 20px; 
 	border: .2px solid green;
-	 width: 100px; 
+	width: 100px; 
+	padding:5px 20px ;
+	transition: .1s ease-in;
+	
 }
 
 .topnav {
@@ -103,7 +108,11 @@ body {
 	font-style: italic;
 }
 .plates{
-	margin-left: 210px;
+	/* background-color: blue; */
+	margin-left: 0px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
 }
 
 .button, .clear,.button1 {
@@ -115,11 +124,10 @@ body {
 	padding:10px 20px ;
 	border-radius: 1em;
 	transition: .1s ease-in;
-	/* margin-right: 70px; */
 	display: flex;
-	margin: 3px;
-	
+	margin: 10px;
 }
+
 .filter {
 align-items: center;
 

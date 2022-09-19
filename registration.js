@@ -3,7 +3,7 @@ module.exports = function reggie(db) {
 
     let regEx = /^(GP|ZJ|WP|EC)\s[0-9]{1,4}(\-|\s)?[0-9]{1,4}$/;
 
-
+     
     async function RegNumber() {
         var car = await db.any("SELECT reg_number FROM my_regnumber");
         return car
