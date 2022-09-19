@@ -72,7 +72,7 @@ describe("The Registration Database tests", async function () {
             
         }); 
 
-        it("Should be filtering by any town", async function () {
+        it("Should be filtering all from GP", async function () {
         
             const regNum =  reggie(db)
             let towns = await regNum.filteReg("GP")
@@ -80,7 +80,7 @@ describe("The Registration Database tests", async function () {
             
         }); 
        
-        it("Should be filtering by any town", async function () {
+        it("Should be filtering all from EC", async function () {
         
             const regNum =  reggie(db)
             let towns = await regNum.filteReg("EC")
@@ -88,7 +88,7 @@ describe("The Registration Database tests", async function () {
             
         }); 
 
-        it("Should be filtering by any town", async function () {
+        it("Should be filtering all from  WP", async function () {
         
           const regNum =  reggie(db)
           let towns = await regNum.filteReg("WP")
