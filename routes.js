@@ -24,8 +24,14 @@ module.exports = function Registration(plates) {
         let reg = req.body.town
         if (reg == false || reg == undefined){
           req.flash('message',"Please select a registration Town ")
-        }else{
-          output = await plates.filteReg(reg)
+        }
+        output = await plates.filteReg(reg)
+          console.log(await plates.filteReg(reg));
+        if(output.length === 0){
+          req.flash('message',"No registration numbers for town")
+        }
+        else{
+          output
         }
         res.render("index", {
           output
@@ -34,7 +40,7 @@ module.exports = function Registration(plates) {
    
       async function getFiltering(req, res) {
         let reg = req.body.town
-        let output = await plates.filteReg(reg)
+        let output = await plates.filteReg(reg);
         res.render("index", {
           output
         });

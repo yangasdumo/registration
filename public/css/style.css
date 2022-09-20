@@ -5,9 +5,7 @@ body {
 	background-image: url(./car.jpeg);
 	background-repeat: no-repeat;
 	background-size: cover;
-
 }
-
 
 .container {
 	display: flex;
@@ -16,12 +14,9 @@ body {
 	width: 600px;
 	flex-wrap: wrap;
 	margin:	auto;
-	/* padding-left: 300px; */
-	
 }
 .main-container{
 	display: flex;
-	/* align-items: center; */
 	justify-content: center;
 	flex-direction: column;
 	padding: 20px;
@@ -108,7 +103,6 @@ body {
 	font-style: italic;
 }
 .plates{
-	/* background-color: blue; */
 	margin-left: 0px;
 	display: flex;
 	flex-direction: row;
